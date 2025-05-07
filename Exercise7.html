@@ -34,6 +34,34 @@
       return total;
     }
 
+//Functions for 7.1 
+// This function handles input and prepares arguments
+function prepareData() {
+      // Input is processed OUTSIDE the function
+      const basketText = document.getElementById("basketInput").value;
+      const pricesText = document.getElementById("pricesInput").value;
+
+      const basket = parseObject(basketText, true);  // quantities are integers
+      const prices = parseObject(pricesText, false); // prices are floats
+
+      // Now we call f7 with processed objects
+      const total = f7(basket, prices);
+      document.getElementById("result").innerText = "Total cost: $" + total.toFixed(2);
+    }
+
+    // Converts input like "apple:2, banana:3" into an object
+    function parseObject(str, toInt) {
+      const obj = {};
+      const items = str.split(",");
+      for (let item of items) {
+        const [key, val] = item.trim().split(":");
+        if (key && val) {
+          obj[key.trim()] = toInt ? parseInt(val) : parseFloat(val);
+        }
+      }
+      return obj;
+    }
+//End of above 7.1
 
    //Adding samle data in objects 
    // Sample data for testing
