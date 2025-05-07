@@ -45,7 +45,7 @@
     <button onclick="handleClick6()">Calculate Sum</button>
 
     <script>
-        // Function to return the sum of all multiples of a or b in array l
+        
         function f4(a, b, l) {
             return l.reduce((sum, num) => {
                 if (num % a === 0 || num % b === 0) {
@@ -55,7 +55,7 @@
             }, 0);
         }
 
-        // Function to be called when the button is clicked
+        
         function handleClick() {
             const a = parseInt(document.getElementById('inputA').value);
             const b = parseInt(document.getElementById('inputB').value);
@@ -64,7 +64,7 @@
             // Convert the input string into an array of integers
             const l = lRaw.split(',').map(num => parseInt(num.trim())).filter(num => !isNaN(num));
 
-            // Validate inputs
+            
             if (isNaN(a) || isNaN(b) || l.length === 0) {
                 alert("Please enter valid integers for a, b, and a list of numbers for l.");
                 return;
@@ -76,7 +76,7 @@
         }
 
 
-         // Function to return the sum of all multiples of values in array a found in array l
+         
          function f5(a, l) {
             return l.reduce((sum, num) => {
                 if (num % a[0] === 0 || num % a[1] === 0) {
@@ -95,7 +95,7 @@
             const lRaw = document.getElementById('inputLAgain').value;
             const l = lRaw.split(',').map(num => parseInt(num.trim())).filter(num => !isNaN(num));
 
-            // Validate inputs
+            
             if (a.length !== 2) {
                 alert("Please enter exactly 2 numbers for array a.");
                 return;
@@ -110,8 +110,8 @@
             alert("The sum of multiples is: " + result);
         }
 
-// Function f6: sum of all numbers in l divisible by any factor in a
-function f6(a, l) {
+
+  function f6(a, l) {
             return l.reduce((sum, num) => {
                 for (let factor of a) {
                     if (num % factor === 0) {
